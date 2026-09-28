@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celebraciones religiosas de O'Higgins</title>
+<style>
+:root{
+  --primary:#7c3aed;
+  --secondary:#ec4899;
+  --bg:#f5f3ff;
+  --card:#ffffff;
+  --text:#27272a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:linear-gradient(135deg,var(--bg),#fff);
+  transition:.4s;
+}
+header{
+  padding:45px 20px;
+  text-align:center;
+  color:white;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  transition:.4s;
+}
+header h1{margin:0 0 10px;font-size:clamp(28px,5vw,46px)}
+header p{margin:0;font-size:17px}
+.controls{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  padding:18px;background:white;box-shadow:0 2px 12px #0001;
+  position:sticky;top:0;z-index:5;
+}
+button{
+  border:0;border-radius:999px;padding:11px 17px;cursor:pointer;
+  color:white;background:var(--primary);font-weight:bold;
+  transition:.25s;
+}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+main{max-width:1100px;margin:30px auto;padding:0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{
+  background:var(--card);border-radius:20px;padding:22px;
+  box-shadow:0 8px 25px #00000012;border-left:6px solid var(--primary);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px #0002}
+.card h2{margin-top:0;color:var(--primary)}
+.info{display:none;margin-top:15px;line-height:1.55}
+.card.open .info{display:block}
+.tag{
+  display:inline-block;padding:6px 10px;border-radius:20px;
+  background:#ede9fe;color:#5b21b6;font-size:13px;font-weight:bold;margin-bottom:10px
+}
+footer{text-align:center;padding:30px;color:#666}
+.dark{
+  --bg:#18181b;--card:#27272a;--text:#f4f4f5;
+}
+.dark .controls{background:#27272a}
+.dark .tag{background:#3f3f46;color:#ddd}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Celebraciones religiosas tradicionales</h1>
+  <p>Región del Libertador General Bernardo O’Higgins</p>
+</header>
+
+<div class="controls">
+  <button onclick="toggleAll()">Mostrar / ocultar información</button>
+  <button onclick="changeTheme()">Cambiar colores</button>
+  <button onclick="toggleDark()">Modo oscuro</button>
+</div>
+
+<main>
+<div class="grid">
+
+<article class="card">
+<span class="tag">1 · Pelequén</span>
+<h2>Fiesta de Santa Rosa de Lima</h2>
+<p><b>Fecha:</b> Alrededor del 30 de agosto.</p>
+<div class="info">
+<p><b>Localidad:</b> Pelequén, comuna de Malloa, provincia de Cachapoal.</p>
+<p><b>Historia:</b> La tradición local sitúa el origen de la devoción en la primera mitad del siglo XIX. Un relato cuenta que un soldado peruano herido llegó con una imagen de Santa Rosa de Lima y atribuyó su recuperación a su intercesión.</p>
+<p><b>Origen:</b> Devoción católica popular que creció alrededor de una imagen venerada por la comunidad.</p>
+<p><b>Actividades:</b> Misas, oración, peregrinación de fieles y visitas al santuario.</p>
+<p><b>Importancia:</b> Reúne a peregrinos y mantiene una tradición religiosa transmitida por generaciones.</p>
+</div>
+</article>
+
+<article class="card">
+<span class="tag">2 · Paredones</span>
+<h2>Fiesta de Nuestra Señora de las Nieves</h2>
+<p><b>Fecha:</b> 5 de agosto.</p>
+<div class="info">
+<p><b>Localidad:</b> Paredones, provincia de Cardenal Caro.</p>
+<p><b>Historia:</b> La tradición cuenta que una imagen de la Virgen llegó a la zona costera a mediados del siglo XVII y allí se estableció su veneración.</p>
+<p><b>Origen:</b> Devoción mariana vinculada a la historia local y a la antigua capilla del sector.</p>
+<p><b>Actividades:</b> Procesión tradicional desde la iglesia de Paredones, con la imagen trasladada en una carreta tirada por bueyes y acompañada por huasos y devotos.</p>
+<p><b>Importancia:</b> Refuerza la identidad de Paredones y une la fe católica con expresiones de la cultura campesina.</p>
+</div>
+</article>
+
+<article class="card">
+<span class="tag">3 · La Estrella</span>
+<h2>Fiesta de San Nicolás de Tolentino</h2>
+<p><b>Fecha:</b> Durante septiembre.</p>
+<div class="info">
+<p><b>Localidad:</b> Comuna de La Estrella, provincia de Cardenal Caro.</p>
+<p><b>Historia:</b> La devoción se relaciona con la presencia agustina en la zona. En 1635 se fundó un convento agustino dedicado a San Nicolás de Tolentino.</p>
+<p><b>Origen:</b> Veneración católica asociada a la antigua presencia de la orden agustina.</p>
+<p><b>Actividades:</b> Celebraciones litúrgicas, oración comunitaria y actividades de encuentro.</p>
+<p><b>Importancia:</b> Conserva una tradición religiosa histórica y fortalece los vínculos comunitarios.</p>
+</div>
+</article>
+
+<article class="card">
+<span class="tag">4 · Nancagua</span>
+<h2>Fiesta de la Inmaculada Concepción de Puquillay</h2>
+<p><b>Fecha:</b> 8 de diciembre.</p>
+<div class="info">
+<p><b>Localidad:</b> Santuario del cerro Puquillay, comuna de Nancagua, provincia de Colchagua.</p>
+<p><b>Historia:</b> La comunidad de Nancagua desarrolló una antigua devoción mariana y construyó el Santuario de la Virgen de Puquillay, inaugurado en 1908.</p>
+<p><b>Origen:</b> Devoción católica y peregrinación a la Virgen María, vinculada a la vida agrícola del valle de Colchagua.</p>
+<p><b>Actividades:</b> Misas, oración y peregrinación desde la parroquia de Nancagua hacia el santuario.</p>
+<p><b>Importancia:</b> Expresa la fe de los habitantes y la tradición de encomendar a la Virgen las cosechas y el cuidado del campo.</p>
+</div>
+</article>
+
+<article class="card">
+<span class="tag">5 · Peralillo</span>
+<h2>Fiesta de Cuasimodo</h2>
+<p><b>Fecha:</b> Generalmente el domingo siguiente a Pascua de Resurrección.</p>
+<div class="info">
+<p><b>Localidad:</b> Peralillo, provincia de Colchagua.</p>
+<p><b>Historia:</b> Cuasimodo es una tradición católica chilena que consiste en llevar la comunión a personas enfermas, mayores o que no pudieron asistir a la misa de Pascua.</p>
+<p><b>Origen:</b> Práctica pastoral católica que combina la visita a los hogares con tradiciones campesinas.</p>
+<p><b>Actividades:</b> El sacerdote recorre sectores llevando la comunión, acompañado tradicionalmente por huasos y jinetes; se realizan oraciones y encuentros comunitarios.</p>
+<p><b>Importancia:</b> Manifiesta solidaridad y acompañamiento, y mantiene expresiones de la cultura huasa.</p>
+</div>
+</article>
+
+</div>
+</main>
+
+<footer>
+  Página interactiva basada en el documento sobre celebraciones religiosas tradicionales de la Región de O’Higgins.
+</footer>
+
+<script>
+let dark=false;
+let theme=0;
+const themes=[
+  ['#7c3aed','#ec4899','#f5f3ff'],
+  ['#0f766e','#06b6d4','#ecfeff'],
+  ['#b45309','#ef4444','#fff7ed'],
+  ['#2563eb','#8b5cf6','#eff6ff']
+];
+
+function toggleAll(){
+  document.querySelectorAll('.card').forEach(c=>c.classList.toggle('open'));
+}
+document.querySelectorAll('.card').forEach(c=>{
+  c.addEventListener('click',e=>{
+    if(e.target.tagName!=='BUTTON') c.classList.toggle('open');
+  });
+});
+function changeTheme(){
+  theme=(theme+1)%themes.length;
+  document.documentElement.style.setProperty('--primary',themes[theme][0]);
+  document.documentElement.style.setProperty('--secondary',themes[theme][1]);
+  document.documentElement.style.setProperty('--bg',themes[theme][2]);
+}
+function toggleDark(){
+  dark=!dark;
+  document.body.classList.toggle('dark',dark);
+}
+</script>
+</body>
+</html>
